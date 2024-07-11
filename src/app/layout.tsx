@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import NavBar from "@/components/NavBar";
-import { SessionProvider } from "next-auth/react";
+import { NavbarDemo } from "./_components/navbar/navbar";
+import { cn } from "@/lib/utils";
+import Sign from "@/components/Sign";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,8 +25,8 @@ export default function RootLayout({
   console.log("hello");
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <NavBar />
+      <body className={cn(inter.className, "bg-slate-950 !pt-[80px]")}>
+        <NavbarDemo>{<Sign />}</NavbarDemo>
         {children}
         <Toaster />
       </body>

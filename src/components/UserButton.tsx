@@ -1,9 +1,10 @@
 import avatarPlaceholder from "@/assets/images/avatar_placeholder.png";
 import { Lock, LogOut, Settings } from "lucide-react";
 import { User } from "next-auth";
-import Image from "next/image";
 import Link from "next/link";
-import { Button } from "./ui/button";
+
+import AnimatedTooltip from "./ui/animated-tooltip";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,15 +24,18 @@ export default function UserButton({ user }: UserButtonProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button size="icon" className="flex-none rounded-full">
-          <Image
-            src={user.image || avatarPlaceholder}
-            alt="User profile picture"
-            width={50}
-            height={50}
-            className="aspect-square rounded-full bg-background object-cover"
+        <div>
+          <AnimatedTooltip
+            items={[
+              {
+                id: 1,
+                name: user.name || "User",
+                designation: "",
+                image: user?.image || avatarPlaceholder,
+              },
+            ]}
           />
-        </Button>
+        </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>{user.name || "User"}</DropdownMenuLabel>

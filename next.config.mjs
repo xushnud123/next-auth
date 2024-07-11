@@ -8,6 +8,18 @@ const nextConfig = {
       {
         hostname: "avatars.githubusercontent.com",
       },
+      {
+        hostname: "assets.aceternity.com",
+      },
+      {
+        hostname: "images.unsplash.com",
+      },
+      {
+        hostname: "images.acer.com",
+      },
+      {
+        hostname: "images.pexels.com",
+      },
     ],
   },
 };
