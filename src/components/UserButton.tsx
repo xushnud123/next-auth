@@ -15,6 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { signOut } from "@/auth";
+import Image from "next/image";
 
 interface UserButtonProps {
   user: User;
@@ -24,16 +25,13 @@ export default function UserButton({ user }: UserButtonProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <div>
-          <AnimatedTooltip
-            items={[
-              {
-                id: 1,
-                name: user.name || "User",
-                designation: "",
-                image: user?.image || avatarPlaceholder,
-              },
-            ]}
+        <div className="w-10 min-w-10 cursor-pointer rounded-full border border-white/[0.5]">
+          <Image
+            src={user.image || avatarPlaceholder}
+            alt={user.name || ""}
+            width={40}
+            height={40}
+            className="h-10 w-10 min-w-10 rounded-full object-cover"
           />
         </div>
       </DropdownMenuTrigger>

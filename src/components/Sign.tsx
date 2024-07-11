@@ -13,8 +13,7 @@ export default async function NavBar() {
   ) : (
     <div
       className={cn(
-        " group relative cursor-pointer rounded-full border border-transparent px-4 py-2 text-white transition-all duration-200",
-        "hover:border-black/10",
+        "relative mx-auto rounded-full border border-emerald-500/20 bg-emerald-300/10 px-4 py-2 text-center tracking-[0.15px] text-white backdrop-blur-sm transition-all duration-200 hover:bg-emerald-300/15",
       )}
     >
       <form
@@ -29,7 +28,7 @@ export default async function NavBar() {
         </button>
       </form>
 
-      <span className=" absolute inset-x-0 -bottom-px mx-auto h-px w-1/2 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-0  transition-all duration-200 group-hover:opacity-100" />
+      <div className="absolute inset-x-0  -bottom-px mx-auto h-px w-3/4 bg-gradient-to-r from-transparent via-emerald-500 to-transparent" />
     </div>
   );
 }
