@@ -20,6 +20,7 @@ const nextConfig = {
       {
         hostname: "images.pexels.com",
       },
+      { hostname: "w7.pngwing.com" },
     ],
   },
 };
